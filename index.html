@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Vật Lý Siêu Nhẩm · Thư viện đề</title>
+  <meta name="theme-color" content="#0B2F20">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+
+    <header class="brand">
+      <div class="brand-left">
+        <div class="logo-tile"><img src="assets/logo-mark.png" alt="Logo Vật Lý Siêu Nhẩm"></div>
+        <div class="brand-text">
+          <span class="pill">THƯ VIỆN ĐỀ</span>
+          <h1>Vật Lý <span class="accent">Siêu Nhẩm</span></h1>
+        </div>
+      </div>
+      <button class="btn-ghost" id="helpBtn" type="button">
+        <span aria-hidden="true">?</span> Hướng dẫn
+      </button>
+    </header>
+
+    <main>
+      <section class="toolbar" aria-label="Tìm đề">
+        <label class="search">
+          <span class="sr-only">Tìm bài kiểm tra</span>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <input id="q" type="search" placeholder="Tìm theo tên bài, ví dụ: từ trường" autocomplete="off">
+        </label>
+        <span class="count" id="count" aria-live="polite"></span>
+      </section>
+
+      <div id="list"></div>
+      <p class="empty" id="empty" hidden>Không tìm thấy bài nào khớp với từ khóa.</p>
+    </main>
+
+    <footer>
+      <span>Vật Lý Siêu Nhẩm · Chinh phục Vật Lý từ số 0</span>
+      <span>Hotline: 0978 650 726</span>
+    </footer>
+  </div>
+
+  <!-- Phóng to QR -->
+  <div class="overlay" id="qrOverlay" hidden>
+    <div class="modal modal-qr" role="dialog" aria-modal="true" aria-labelledby="qrTitle">
+      <button class="close" type="button" data-close aria-label="Đóng">×</button>
+      <h2 id="qrTitle">QR đáp án</h2>
+      <p class="muted" id="qrSub"></p>
+      <img id="qrBig" alt="Mã QR đáp án">
+    </div>
+  </div>
+
+  <!-- Hướng dẫn -->
+  <div class="overlay" id="helpOverlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+      <button class="close" type="button" data-close aria-label="Đóng">×</button>
+      <h2 id="helpTitle">Cách dùng nhanh</h2>
+      <ol class="steps">
+        <li><b>Chọn bài</b> trong danh sách (gõ vào ô tìm kiếm nếu danh sách dài).</li>
+        <li><b>Lấy đề để in:</b> bấm “Mở thư mục đề trên Google Drive”, chọn đúng mã đề cần in.</li>
+        <li><b>Chấm bài:</b> mở app TN Marker và quét mã QR của bài đó. Bấm “Phóng to QR” nếu màn hình nhỏ khó quét.</li>
+      </ol>
+      <p class="note">Mỗi bài có nhiều mã đề, nhưng chỉ cần <b>một mã QR</b> chứa đáp án của tất cả mã đề.</p>
+      <p class="note">Trang này chỉ dành cho giáo viên và trợ giảng. Vui lòng không chia sẻ cho học sinh.</p>
+    </div>
+  </div>
+
+  <script src="data/exams.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
